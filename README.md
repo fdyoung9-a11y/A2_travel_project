@@ -36,12 +36,12 @@ OpenAI 호환 API를 통해 추천 이유와 여행 팁을 생성합니다.
 - `KAKAO_REST_API_KEY`
 
 A2_travel_project/
-├─ main.py
-├─ README.md
-├─ .env
-├─ .gitignore
-├─ test_kakao.py
-└─ test_models.py
+ ├─ main.py
+ ├─ README.md
+ ├─ .env
+ ├─ .gitignore
+ ├─ test_kakao.py
+ └─ test_models.py
 
 ## 실행 방법
 1. 필요한 패키지를 설치합니다.
