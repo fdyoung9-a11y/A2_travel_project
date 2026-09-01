@@ -167,6 +167,36 @@ def print_results(recommendations):
         except Exception as e:
             print("카카오 장소 검색 실패:", e)
 
+def search_kakao_place(query):
+    if not KAKAO_REST_API_KEY:
+        return None
+
+    url = "https://dapi.kakao.com/v2/local/search/keyword.json"
+    headers = {
+        "Authorization": f"KakaoAK {KAKAO_REST_API_KEY}"
+    }
+    params = {
+        "query": query,
+        "size": 1
+    }
+
+    response = requests.get(url, headers=headers, params=params)
+    response.raise_for_status()
+
+    data = response.json()
+    documents = data.get("documents", [])
+
+    if not documents:
+        return None
+
+    place = documents[0]
+    return {
+        "place_name": place.get("place_name"),
+        "address_name": place.get("address_name"),
+        "road_address_name": place.get("road_address_name"),
+        "place_url": place.get("place_url")
+    }        
+
 
 def main():
     # 필수 값 체크
@@ -193,6 +223,7 @@ def main():
     except Exception as e:
         print("프로그램 실행 중 오류가 발생했습니다.")
         print(e)
+
 
 
 if __name__ == "__main__":

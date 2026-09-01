@@ -12,6 +12,11 @@ Python과 외부 API를 활용하여 여행지 정보를 가져오고, 추천 �
 - Git과 GitHub 협업 및 버전 관리 연습
 - 여행지 추천 프로그램 구현
 
+## 주요 기능
+- 사용자 입력 기반 여행 조건 수집
+- OpenAI 호환 API로 국내 여행지 추천
+- Kakao Local API로 장소 주소 및 지도 링크 출력
+
 ## 사용 기술
 - Python 3.10+
 - requests
